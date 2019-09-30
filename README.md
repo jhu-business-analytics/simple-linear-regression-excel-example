@@ -1,4 +1,20 @@
-# Simple Linear Regression
+# Simple Linear Regression in Excel
+
+# Table of Contents
+We'll cover how to conduct a simple linear regression analysis in Excel with Baltimore City Open Data on Baltimore City government employee salaries in Fiscal Year 2018. This tutorial covers:
+
+ - Overview
+ - [Data Cleaning](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#data-cleaning)
+     - [DESCR Column](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#descr-column)
+     - [HIRE_DT Column](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#hire_dt-column)
+     - [Filtering Data](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#filtering-data-for-one-department-descr-column)
+ - [Simple Linear Regression](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#simple-linear-regression-1)
+     - [Least Squares Line](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#least-squares-line)
+     - [Calculating Errors](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#calculating-errors)
+     - [Standard Error of Residual and Outliers](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#standard-error-of-residual-and-outliers)
+ - [Further Analysis](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#further-analysis)
+
+# Overview
 
 We can use a __simple linear regression__ to approximate how two variables in a dataset are related. In our data for simple linear regression, we’ll have: 
  - An __independent variable__, which is our explanatory variable. This variable can be directly controlled. 
