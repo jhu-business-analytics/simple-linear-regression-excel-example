@@ -32,7 +32,7 @@ We’re going to perform a simple linear regression to see if we can create a mo
 
 First, we’ll clean the DESCR column to remove the department subcategory numbers so we can organize departments by name only. We’ll use the Text to Columns tool in Excel to separate out the department name from the subcategory number by splitting the column on a delimiter as shown in the gif below:
 
-![Alt Text]
+![Alt Text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/data_cleaning_text_to_col.gif)
 
 To do this, we:
 1. Highlight the column we want to edit (DESCR)
