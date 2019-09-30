@@ -92,23 +92,21 @@ Now that we have cleaned data, we can conduct a simple linear regression to see 
 
 1. Highlight both the employment_time_years and ANNUAL_RT columns and click on the Scatter chart option under the Insert menu
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/trendline_1.gif)
 
 This gives us a plot of our data with the length of employment in Baltimore City on our x-axis and the contracted salary on the y-axis (what we want!)
 
 2. Label the x-axis, y-axis, and chart title to that we remember what this data tells us by clicking on Add Chart Element and selecting the appropriate option for each label
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/trendline_2.gif)
 
 3. Click on the data points in your chart and then click on Add Chart Element > Trendline > Linear to insert a trendline for this data
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/trendline_3.gif)
 
 4. Sometimes this shows up as a line that’s a similar color or dashed line that blends in with our data points, so we reformat our data by right-clicking on the trendline, and changing the color, weight, and style of the trendline so that we can visualize it easier
-![Alt text]
-
 5. Check the boxes to display the trendline equation and the R2 value on the chart
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/trendline_4.gif)
 
 The trendline equation gives us our best-fit line, or least squares line, which means that this line minimizes the error, or distance, between the “predicted” value from our line equation and the actual or observed value in our dataset for all of the data points
 
@@ -132,7 +130,7 @@ Now that we have our best fit line, we can calculate the error that this gives f
 1. Create a new column in the dataset named predicted_annual_salary
 2. In the first cell of this column below the column header, we type the equation of our best fit line, replacing x with the cell of the value for x (value in the ANNUAL_RT column) in the same row. We can either type in the numbers as shown in our graph, or select and freeze (adding $ in front of the letter and number for the cell we want to freeze) the values for slope and intercept that we found with Excel formulas. You can freeze the cell value/add the $s with keystrokes by using the F4 function key after selecting that cell in the formula.
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/error_1.gif)
 
 3. Drag these calculations down the entire column to calculate the predicted annual salary for every data point 
 4. Next, we’ll calculate the error between our observed annual salary data and our predicted annual salary data for every data point in the next column. Label this column salary_error
@@ -144,7 +142,7 @@ Now that we have our best fit line, we can calculate the error that this gives f
 
 If ANNUAL_RT is in column G, and predicted_salary is in column I
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/error_2.gif)
  
 6. Drag these calculations down the entire column to calculate the error between our observed annual salary and the predicted annual salary based on our least squares line 
 
@@ -162,7 +160,8 @@ To determine the outliers in our dataset, we conduct the following calculations:
 =STEXY(known ys, known xs) 
 ```
 where the known ys are our independent variables (all of the values in the employement_time_years column) and the known xs are our dependent variables (all of the values in the ANNUAL_RT column)
-![Alt text]
+
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/ser.gif)
 
 2. Determine which of our data points are considered outliers based on our error and standard error of the residual calculations. We know that a data point is considered an outlier if the absolute value of the error is greater than 2 x the standard error of regression, so we can show if each value is an outlier with the Excel IF statement:
 
@@ -171,10 +170,10 @@ where the known ys are our independent variables (all of the values in the emplo
 ```
 
 Where J2 is the value in the error column and O5 is the value in the standard error of regression column. Create a new column named outliers and input this formula in the first cell in the column below the header
-![Alt text]
+
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/outlier_identification.gif)
 
 3. Drag this formula down the entire column to see which values are outliers and with values are not outliers 
-
 
 If we filter the data set now, we can see that the column is filled with only two values (outlier or not outlier), and we can filter our dataset to view only the outliers.
 
