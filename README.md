@@ -3,7 +3,7 @@
 # Table of Contents
 We'll cover how to conduct a simple linear regression analysis in Excel with Baltimore City Open Data on Baltimore City government employee salaries in Fiscal Year 2018. This tutorial covers:
 
- - Overview
+ - [Overview](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/README.md#overview)
  - [Data Cleaning](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#data-cleaning)
      - [DESCR Column](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#descr-column)
      - [HIRE_DT Column](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example#hire_dt-column)
