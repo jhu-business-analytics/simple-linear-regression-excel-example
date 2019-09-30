@@ -6,7 +6,7 @@ We can use a __simple linear regression__ to approximate how two variables in a 
  
 If we think back to a general line graph, we know that our independent variable runs along the x-axis, and our dependent variable runs along the y-axis, and our graphed, straight line gives the formula y = mx + b, where m is the slope of the line and b is the y-intercept. 
 
-![Alt Text] 
+![Alt Text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/simple_linear_reg_images/line_example.png)
 
 In this case, the dollars spent on advertising is our independent variable, and our sales are our dependent variable, and our line shows the trend y = 7x + 2. In most cases, our data won’t be clean enough for us to get an exact line through all of our data points, so we use linear regression to statistically determine the best-fit trendline with our data to help us predict the dependent variable based on the independent variable. 
 
@@ -23,7 +23,7 @@ When we first look at our data we see that we can see the following information 
  
 Which looks like this in our excel spreadsheet: 
 
-![Alt Text]
+![Alt Text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/simple_linear_reg_images/baltimore_city_salary_raw_screenshot.png)
 
 We’re going to perform a simple linear regression to see if we can create a model to help us determine an employee’s contract salary based on the number of years that they’ve worked in Baltimore City government based on a specific Baltimore City government department.
 
@@ -40,7 +40,10 @@ To do this, we:
 3. Click on Text to Columns
 4. Select “Delimited” then Next-- this means that we have a character/space/tab that can act as a boundary between the data we want to keep and separate in the column
 5. Identify the delimiter in our column by selecting “Other” and then typing ( in the box. You’ll see a preview of how your data will be separated in the window below. Click Next.  
-6. We only want to keep the column with the department name, so we can click on the column with the department subcategory numbers and then select “Do not import column (Skip).” <br><br>If we remember back to the Excel spreadsheet, we’ll notice that most rows in the DESCR column have the department name followed by a number in parentheses, however, some columns may have extra parentheses. <br><br>In order to make sure that we remove all extra columns created by our delimiter, we need to scroll down to find one of these extra columns appear, select it, and then click “Do not import column (Skip)” for this column as well. If you don’t do this, then excel will give us an error message to let us know that splitting our selected column will create a new column that will save over our data.
+6. We only want to keep the column with the department name, so we can click on the column with the department subcategory numbers and then select “Do not import column (Skip).” <br><br>If we remember back to the Excel spreadsheet, we’ll notice that most rows in the DESCR column have the department name followed by a number in parentheses, however, some columns may have extra parentheses. 
+
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/simple_linear_reg_images/parentheses_excel_sheet.png)
+In order to make sure that we remove all extra columns created by our delimiter, we need to scroll down to find one of these extra columns appear, select it, and then click “Do not import column (Skip)” for this column as well. If you don’t do this, then excel will give us an error message to let us know that splitting our selected column will create a new column that will save over our data.
 7. Click “Finish” and see your new columns with only the department name.
 
 ## HIRE_DT Column
@@ -114,7 +117,7 @@ The R2 value tells us how well this line represents our data as a percentage, me
 
 Where known ys and known xs are the values we put in for our independent and dependent variable in our chart, respectively. We label these values in our dataset in cells M21:N24 so that the value for the slope is in N21, the value for the intercept is in N22, and the value for R2 is in N24.
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/simple_linear_reg_images/slope_intercept_rsq_excel.png)
 
 ## Calculating Errors
 
@@ -179,11 +182,11 @@ _How can we better determine a model for predicting the employee’s salary?_
 
 We’ll notice that there are almost 100 unique types of positions in the Baltimore Police Department, but the majority (almost two-thirds) of employees fall under Police Officer categories (Police Officer, Police Officer Trainee, and Police Officer EID). Let’s filter our data once more to only include Police Officer employee position titles, and then perform the analysis again. 
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/simple_linear_reg_images/police_officer_linear_reg_annual.png)
 
 This gives us a better model fit for our data with an R2 value of 0.761 and a standard error of residual of approximately $17,097. These values only give us a model to predict only the Baltimore City government employee’s salary as determined on their contracts, which doesn’t necessarily take into account what the Baltimore Police Department actually pays their employees and how they might want to think through budgeting for salaries in the department. If we conduct the same analysis with the GROSS column data (the actual payout for the employee’s salary from the department), we see a very different output.
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/simple_linear_reg_images/police_officer_linear_reg_gross.png)
 
 Now, the R2 value is only 0.3903 and the standard error of residual of approximately $33,768--more than double the previous example. This tells us that the Baltimore City employee’s tenure is not actually a great predictor of their final salary payment from the City of Baltimore, and that there may be other independent variables that actually determine how much a Baltimore Police Officer gets paid in a given fiscal year. If we want a better predictor of a Baltimore City Police Officer’s salary, we may need to take into consideration other characteristics such as if they are part-time vs. if they are full time, where they are stationed, external conditions around their time of employment, or the number of other officers in their unit. We may also want to dive deeper into additional trends in this dataset such as the year or month that they were hired or their department subcategory (that we initially filtered out in cleaning our data).
 
