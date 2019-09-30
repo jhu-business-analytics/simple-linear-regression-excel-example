@@ -30,20 +30,27 @@ We’re going to perform a simple linear regression to see if we can create a mo
 # Data Cleaning
 ## DESCR Column
 
-First, we’ll clean the DESCR column to remove the department subcategory numbers so we can organize departments by name only. We’ll use the Text to Columns tool in Excel to separate out the department name from the subcategory number by splitting the column on a delimiter as shown in the gif below:
-
-![Alt Text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/data_cleaning_text_to_col.gif)
+First, we’ll clean the DESCR column to remove the department subcategory numbers so we can organize departments by name only. We’ll use the Text to Columns tool in Excel to separate out the department name from the subcategory number by splitting the column on a delimiter.
 
 To do this, we:
 1. Highlight the column we want to edit (DESCR)
 2. Click on the Data menu 
 3. Click on Text to Columns
 4. Select “Delimited” then Next-- this means that we have a character/space/tab that can act as a boundary between the data we want to keep and separate in the column
+
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/descr_col_1.gif)
+
 5. Identify the delimiter in our column by selecting “Other” and then typing ( in the box. You’ll see a preview of how your data will be separated in the window below. Click Next.  
+
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/descr_col_2.gif)
+
 6. We only want to keep the column with the department name, so we can click on the column with the department subcategory numbers and then select “Do not import column (Skip).” <br><br>If we remember back to the Excel spreadsheet, we’ll notice that most rows in the DESCR column have the department name followed by a number in parentheses, however, some columns may have extra parentheses. 
 
 ![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/simple_linear_reg_images/parentheses_excel_sheet.png)
 In order to make sure that we remove all extra columns created by our delimiter, we need to scroll down to find one of these extra columns appear, select it, and then click “Do not import column (Skip)” for this column as well. If you don’t do this, then excel will give us an error message to let us know that splitting our selected column will create a new column that will save over our data.
+
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/descr_col_3.gif)
+
 7. Click “Finish” and see your new columns with only the department name.
 
 ## HIRE_DT Column
@@ -53,30 +60,29 @@ One of the things we want to check is whether we can use length of time someone 
 1. Insert a new column after the HIRE_DT column and name this employment_time_years
 2. In the first cell of this column type in `=TODAY()-` and then click on the cell in that row under the HIRE_DT column.
 
-<br>The `TODAY()` function in Excel will return today’s date. Since we can perform simple arithmetic functions with any form of numbered cells, we can calculate the number of days that the employee has worked for Baltimore City government by subtracting the date that the employee was hired from today’s date.
+The `TODAY()` function in Excel will return today’s date. Since we can perform simple arithmetic functions with any form of numbered cells, we can calculate the number of days that the employee has worked for Baltimore City government by subtracting the date that the employee was hired from today’s date.
+
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/hire_dt_1.gif)
 
 3. Hit return/enter on your keyboard to return the time from the employee’s employment hire date to today in days
 
-![Alt text]
-
 If this returns a date or other formatted value, reformat the cells in that column to produce a number with 2 decimal places
+
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/hire_dt_2.gif)
+
 It’s not really useful for us to use number of days as the unit for evaluating length of hire, so we’ll edit our Excel formula in the formula bar to divide this new value by 365 (365 days in a year)
 
-![Alt text] 
-
 4. Once we have the number of years of employment in Baltimore City, we’ll drag this value down for the length of our column to calculate this value for every person in this dataset
-
-![Alt text]
 
 ## Filtering Data for one Department (DESCR Column)
 
 Our last step to clean our dataset for a linear regression analysis is to filter our dataset for one Baltimore City government department. We can do this in a number of ways, but the easiest way is for us to add a filter onto our column headers, and then select the department from our DESCR column that we want to analyze. Here, we’re selecting the Police Department. 
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/screenshare_gifs/filter_police.gif)
 
 This will filter our data to include only the values in the DESCR column that have Police Department as the Baltimore City department description. Then, we’ll copy this filtered data into a new excel spreadsheet in our Excel workbook, and rename this “police_data”
 
-![Alt text]
+![Alt text](https://github.com/jhu-business-analytics/simple-linear-regression-excel-example/blob/master/simple_linear_reg_images/police_data_spreadsheet_name.png)
 
 # Simple Linear Regression
 
